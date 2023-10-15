@@ -31,7 +31,8 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     implementation("org.springframework.security:spring-security-core:6.1.4")
-
+    implementation("org.springframework.security:spring-security-config:6.0.2")
+    implementation("org.springframework.security:spring-security-web:6.1.0")
 }
 
 allOpen {
