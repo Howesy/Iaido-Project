@@ -18,7 +18,7 @@ class PersonService(private val personRepository: PersonRepository) {
 
 
     fun retrieveAllPersonsByName(personName: String):
-            List<Person> = personRepository.findAll(Sort.by(Sort.Direction.DESC, "firstName"))
+            List<Person> = personRepository.findByPersonName(personName)
 
     fun retrieveAllPersonsByAge(personAge: String):
             List<Person> = personRepository.findAll(Sort.by(Sort.Direction.DESC, "age"))
