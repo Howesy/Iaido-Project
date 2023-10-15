@@ -1,7 +1,6 @@
 package com.example.iadiointerviewtest
 
 import jakarta.persistence.*
-import java.time.LocalDate
 
 @Entity
 @Table(name = "person")
