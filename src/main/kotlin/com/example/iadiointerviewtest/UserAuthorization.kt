@@ -38,11 +38,14 @@ class HTTPSecurityConfiguration {
         http.csrf().disable()
 
         val personIdentifierMatcher = AntPathRequestMatcher("/searchPersons/**", "GET")
+        val personArgumentsMatcher = AntPathRequestMatcher("/persons/**")
         val personsMatcher = RegexRequestMatcher.regexMatcher("/persons")
 
         http.authorizeHttpRequests()
             .requestMatchers(personIdentifierMatcher)
             .hasAnyRole("GUEST", "ADMIN")
+            .requestMatchers(personArgumentsMatcher)
+            .hasRole("ADMIN")
             .requestMatchers(personsMatcher)
             .hasRole("ADMIN")
             .and()
