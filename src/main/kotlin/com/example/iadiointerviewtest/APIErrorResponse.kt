@@ -12,6 +12,13 @@ class APIErrorResponse {
         val errorMessage = APIErrorMessage(HttpStatus.BAD_REQUEST.value(), exception.message)
         return ResponseEntity(errorMessage, HttpStatus.BAD_REQUEST)
     }
+
+    @ExceptionHandler
+    fun handlePersonNotFound(exception: PersonNotFound): ResponseEntity<APIErrorMessage> {
+        val errorMessage = APIErrorMessage(HttpStatus.BAD_REQUEST.value(), exception.message)
+        return ResponseEntity(errorMessage, HttpStatus.BAD_REQUEST)
+    }
 }
 
 class PersonAlreadyExists(message: String): RuntimeException(message) {}
+class PersonNotFound(message: String): RuntimeException(message) {}
