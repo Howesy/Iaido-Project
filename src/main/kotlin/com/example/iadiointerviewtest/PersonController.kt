@@ -16,12 +16,20 @@ class PersonController(private val personService: PersonService) {
             List<Person> = personService.retrieveAllPersons()
 
     @GetMapping("/personsByName/{firstName}")
-    fun retrieveAllPersonsByName(@PathVariable("firstName") name: String):
-            List<Person> = personService.retrieveAllPersonsByName(name)
+    fun retrieveAllPersonsByName(@PathVariable("firstName") name: String): List<CleanedPerson> {
+        val allPersons = personService.retrieveAllPersonsByName(name)
+        val cleanedPersons = mutableListOf<CleanedPerson>()
+        allPersons.forEach { person -> cleanedPersons.add(person.clean()) }
+        return cleanedPersons
+    }
 
     @GetMapping("/personsByAge/{age}")
-    fun retrieveAllPersonsByAge(@PathVariable("age") age: String):
-            List<Person> = personService.retrieveAllPersonsByAge(age)
+    fun retrieveAllPersonsByAge(@PathVariable("age") age: String): List<CleanedPerson> {
+        val allPersons = personService.retrieveAllPersonsByAge(age)
+        val cleanedPersons = mutableListOf<CleanedPerson>()
+        allPersons.forEach { person -> cleanedPersons.add(person.clean()) }
+        return cleanedPersons
+    }
 
     @GetMapping("/persons/{id}")
     fun retrievePerson(@PathVariable("id") id: Long):

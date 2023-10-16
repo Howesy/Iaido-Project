@@ -24,3 +24,13 @@ data class Person (
         @Column(name = "password", nullable = false)
         val password: String
 )
+
+fun Person.clean() = CleanedPerson(
+        id = id,
+        firstName = firstName,
+        lastName = lastName,
+        email = email,
+        phone = phone,
+        dateOfBirth = dateOfBirth,
+        age = age
+)

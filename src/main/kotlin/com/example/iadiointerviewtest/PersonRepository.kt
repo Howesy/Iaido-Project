@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface PersonRepository : JpaRepository<Person, Long> {
-
     @Query("SELECT p FROM Person p WHERE p.firstName LIKE %:name%")
     fun findByPersonName(@Param("name") firstName: String): List<Person>
 }
