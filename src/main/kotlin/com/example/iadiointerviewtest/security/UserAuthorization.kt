@@ -14,6 +14,13 @@ import org.springframework.security.web.util.matcher.RegexRequestMatcher
 @Configuration
 @EnableWebSecurity
 class HTTPSecurityConfiguration {
+
+    /**
+     * Establish memory based user authorization with roles.
+     * The roles in question are named "guest" and "admin"
+     * @return UserDetailsService
+     */
+
     @Bean
     fun userDetailsServiceHandler(): UserDetailsService {
         val users = User.withDefaultPasswordEncoder()
@@ -32,6 +39,12 @@ class HTTPSecurityConfiguration {
 
         return InMemoryUserDetailsManager(guest, admin)
     }
+
+    /**
+     * Establish the security constraints for roles regarding the API endpoints .
+     * @param http Security object for establishing authorization constraints.
+     * @return SecurityFilterChain
+     */
 
     @Bean
     fun apiFilterChain(http: HttpSecurity): SecurityFilterChain {
@@ -53,7 +66,5 @@ class HTTPSecurityConfiguration {
 
         return http.build()
     }
-
-
 }
 
