@@ -9,4 +9,13 @@ import org.springframework.stereotype.Repository
 interface PersonRepository : JpaRepository<Person, Long> {
     @Query("SELECT p FROM Person p WHERE p.firstName LIKE %:name%")
     fun findByPersonName(@Param("name") firstName: String): List<Person>
+
+    @Query("SELECT p FROM Person p WHERE p.age = :age")
+    fun findByPersonAge(@Param("age") age: String): List<Person>
+
+    @Query("SELECT p FROM Person p WHERE p.firstName LIKE %:name% AND p.age = :age")
+    fun findPersonsByIdentifiers(@Param("name") firstName: String?, @Param("age") age: String?): List<Person>
+
+    @Query("SELECT p FROM Person p WHERE p.username = :username")
+    fun findUniqueUsername(@Param("username") username: String): Person?
 }
