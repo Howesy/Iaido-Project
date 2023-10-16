@@ -1,4 +1,4 @@
-package com.example.iadiointerviewtest
+package com.example.iadiointerviewtest.exception
 
 class APIErrorMessage(
     val statusCode: Int? = null,

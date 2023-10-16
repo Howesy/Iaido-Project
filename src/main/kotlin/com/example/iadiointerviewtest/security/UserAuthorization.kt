@@ -1,4 +1,4 @@
-package com.example.iadiointerviewtest
+package com.example.iadiointerviewtest.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

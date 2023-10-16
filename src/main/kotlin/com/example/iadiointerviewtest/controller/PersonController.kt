@@ -1,5 +1,9 @@
-package com.example.iadiointerviewtest
+package com.example.iadiointerviewtest.controller
 
+import com.example.iadiointerviewtest.entity.CleanedPerson
+import com.example.iadiointerviewtest.entity.Person
+import com.example.iadiointerviewtest.entity.clean
+import com.example.iadiointerviewtest.service.PersonService
 import org.springframework.data.domain.Page
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
@@ -41,7 +45,7 @@ class PersonController(private val personService: PersonService) {
 
     @GetMapping("/persons/{id}")
     fun retrievePerson(@PathVariable("id") id: Long):
-        Person = personService.retrievePerson(id)
+            Person = personService.retrievePerson(id)
 
     @PostMapping("/persons")
     fun createPerson(@RequestBody requestBody: Person):

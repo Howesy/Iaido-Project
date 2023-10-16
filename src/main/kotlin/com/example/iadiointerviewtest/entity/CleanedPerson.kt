@@ -1,4 +1,4 @@
-package com.example.iadiointerviewtest
+package com.example.iadiointerviewtest.entity
 
 
 

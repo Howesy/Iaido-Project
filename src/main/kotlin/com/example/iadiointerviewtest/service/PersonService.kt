@@ -1,5 +1,9 @@
-package com.example.iadiointerviewtest
+package com.example.iadiointerviewtest.service
 
+import com.example.iadiointerviewtest.entity.Person
+import com.example.iadiointerviewtest.repository.PersonRepository
+import com.example.iadiointerviewtest.exception.PersonAlreadyExists
+import com.example.iadiointerviewtest.exception.PersonNotFound
 import org.springframework.data.domain.Page
 import org.springframework.stereotype.Service
 import org.springframework.data.domain.PageRequest
@@ -30,7 +34,7 @@ class PersonService(private val personRepository: PersonRepository) {
 
     fun retrievePerson(personID: Long):
             Person = personRepository.findById(personID)
-            .orElseThrow{PersonNotFound("ERROR: Unable to retrieve person matching that ID, they do not exist.")}
+            .orElseThrow{ PersonNotFound("ERROR: Unable to retrieve person matching that ID, they do not exist.") }
 
     fun retrievePersonByUnique(username: String):
             Person? = personRepository.findUniqueUsername(username)

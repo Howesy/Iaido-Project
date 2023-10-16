@@ -1,4 +1,4 @@
-package com.example.iadiointerviewtest
+package com.example.iadiointerviewtest.exception
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
