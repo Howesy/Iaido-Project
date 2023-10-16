@@ -37,14 +37,11 @@ class HTTPSecurityConfiguration {
     fun apiFilterChain(http: HttpSecurity): SecurityFilterChain {
         http.csrf().disable()
 
-        val personNameMatcher = AntPathRequestMatcher("/personsByName/**", "GET")
-        val personsAgeMatcher = AntPathRequestMatcher("/personsByAge/**", "GET")
+        val personIdentifierMatcher = AntPathRequestMatcher("/searchPersons/**", "GET")
         val personsMatcher = RegexRequestMatcher.regexMatcher("/persons")
 
         http.authorizeHttpRequests()
-            .requestMatchers(personsAgeMatcher)
-            .hasAnyRole("GUEST", "ADMIN")
-            .requestMatchers(personNameMatcher)
+            .requestMatchers(personIdentifierMatcher)
             .hasAnyRole("GUEST", "ADMIN")
             .requestMatchers(personsMatcher)
             .hasRole("ADMIN")
