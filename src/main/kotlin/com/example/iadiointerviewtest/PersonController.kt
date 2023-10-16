@@ -1,5 +1,6 @@
 package com.example.iadiointerviewtest
 
+import org.springframework.data.domain.Page
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
@@ -13,8 +14,9 @@ import org.springframework.web.bind.annotation.RestController
 class PersonController(private val personService: PersonService) {
 
     @GetMapping("/persons")
-    fun retrieveAllPersons():
-            List<Person> = personService.retrieveAllPersons()
+    fun retrieveAllPersons(@RequestParam page: Int, @RequestParam amount: Int): Page<Person> {
+        return personService.retrieveAllPersons(page, amount)
+    }
 
     @GetMapping("/searchPersons")
     fun searchPersons(@RequestParam(required = false) name: String?, @RequestParam(required = false) age: String?): List<CleanedPerson> {

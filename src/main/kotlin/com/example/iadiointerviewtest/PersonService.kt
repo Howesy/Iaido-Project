@@ -1,7 +1,8 @@
 package com.example.iadiointerviewtest
 
+import org.springframework.data.domain.Page
 import org.springframework.stereotype.Service
-import org.springframework.http.HttpStatus
+import org.springframework.data.domain.PageRequest
 
 @Service
 class PersonService(private val personRepository: PersonRepository) {
@@ -13,8 +14,10 @@ class PersonService(private val personRepository: PersonRepository) {
         return personRepository.save(person)
     }
 
-    fun retrieveAllPersons():
-            List<Person> = personRepository.findAll()
+    fun retrieveAllPersons(pageNumber: Int, pageSize: Int): Page<Person> {
+        val pageable = PageRequest.of(pageNumber, pageSize)
+        return personRepository.findAll(pageable)
+    }
 
     fun retrieveAllPersonsByName(personName: String):
             List<Person> = personRepository.findByPersonName(personName)
