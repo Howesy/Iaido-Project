@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.MissingServletRequestParameterException
 
+/**
+ * ControllerAdvice class for handling exceptions regarding the API
+ */
+
 @ControllerAdvice
 class APIErrorResponse {
 
@@ -84,6 +88,20 @@ class APIErrorResponse {
 
 //Classes for my custom exceptions
 
+/**
+ * @exception PersonAlreadyExists Person already exists in the database.
+ */
+
 class PersonAlreadyExists(message: String): RuntimeException(message) {}
+
+/**
+ * @exception PersonNotFound Person not found in the database.
+ */
+
 class PersonNotFound(message: String): RuntimeException(message) {}
+
+/**
+ * @exception IllegalAgeConversion Invalid age specification in the API.
+ */
+
 class IllegalAgeConversion(message: String): RuntimeException(message) {}
