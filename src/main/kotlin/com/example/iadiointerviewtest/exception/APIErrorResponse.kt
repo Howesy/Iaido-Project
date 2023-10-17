@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.MissingServletRequestParameterException
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException
 
 /**
  * ControllerAdvice class for handling exceptions regarding the API
@@ -82,6 +83,20 @@ class APIErrorResponse {
     @ExceptionHandler
     fun handleIllegalAgeConversion(exception: IllegalAgeConversion): ResponseEntity<APIErrorMessage> {
         val errorMessage = APIErrorMessage(HttpStatus.BAD_REQUEST.value(), exception.message)
+        return ResponseEntity(errorMessage, HttpStatus.BAD_REQUEST)
+    }
+
+    /**
+     * Method argument type mismatch handler
+     * @param exception MethodArgumentTypeMismatchException
+     * @return ResponseEntity Sends error message to the API
+     */
+
+    @ExceptionHandler
+    fun handleArgumentTypeMismatchException(exception: MethodArgumentTypeMismatchException):
+            ResponseEntity<APIErrorMessage> {
+        val errorMessage = APIErrorMessage(HttpStatus.BAD_REQUEST.value(),
+            "Please provide the correct argument - ${exception.message}")
         return ResponseEntity(errorMessage, HttpStatus.BAD_REQUEST)
     }
 }
