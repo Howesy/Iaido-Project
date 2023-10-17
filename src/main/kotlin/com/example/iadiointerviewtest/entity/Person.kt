@@ -3,6 +3,20 @@ package com.example.iadiointerviewtest.entity
 import com.example.iadiointerviewtest.dto.CleanedPerson
 import jakarta.persistence.*
 
+/**
+ * Entity class for my person
+ * @property id ID of the person entity
+ * @property firstName First name of the person entity
+ * @property lastName Last name of the person entity
+ * @property email Email of the person entity
+ * @property phone Phone number of the person entity
+ * @property dateOfBirth Date of birth of the person entity
+ * @property age Age of the person entity
+ * @property username Username of the person entity
+ * @property password Password of the person entity
+ *
+ */
+
 @Entity
 @Table(name = "person")
 data class Person (
@@ -25,6 +39,10 @@ data class Person (
         @Column(name = "password", nullable = false)
         val password: String
 )
+
+/**
+ * Convert Person entity to CleanedPerson entity
+ */
 
 fun Person.clean() = CleanedPerson(
         id = id,
