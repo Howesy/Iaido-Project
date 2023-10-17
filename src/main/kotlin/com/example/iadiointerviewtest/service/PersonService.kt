@@ -77,9 +77,6 @@ class PersonService(private val personRepository: PersonRepository) {
             Person = personRepository.findById(personID)
             .orElseThrow{ PersonNotFound("ERROR: Unable to retrieve person matching that ID, they do not exist.") }
 
-    fun retrievePersonByUnique(username: String):
-            Person? = personRepository.findUniqueUsername(username)
-
     /**
      * Update a person by ID.
      * @param personID The ID of the person to update.
