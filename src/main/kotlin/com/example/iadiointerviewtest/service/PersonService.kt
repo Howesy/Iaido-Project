@@ -1,10 +1,8 @@
 package com.example.iadiointerviewtest.service
 
 import com.example.iadiointerviewtest.entity.Person
-import com.example.iadiointerviewtest.exception.IllegalAgeConversion
+import com.example.iadiointerviewtest.exception.*
 import com.example.iadiointerviewtest.repository.PersonRepository
-import com.example.iadiointerviewtest.exception.PersonAlreadyExists
-import com.example.iadiointerviewtest.exception.PersonNotFound
 import org.springframework.data.domain.Page
 import org.springframework.stereotype.Service
 import org.springframework.data.domain.PageRequest
@@ -14,7 +12,7 @@ class PersonService(private val personRepository: PersonRepository) {
 
     /**
      * Allocate a person to the database.
-     * @param Person The person entity to add to the database.
+     * @param person The person entity to add to the database.
      * @return Person The person added to the database.
      */
 
