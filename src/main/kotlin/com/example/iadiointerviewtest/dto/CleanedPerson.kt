@@ -1,6 +1,4 @@
-package com.example.iadiointerviewtest.entity
-
-
+package com.example.iadiointerviewtest.dto
 
 data class CleanedPerson(
     val id: Long?,

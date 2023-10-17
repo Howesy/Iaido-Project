@@ -1,5 +1,6 @@
 package com.example.iadiointerviewtest.entity
 
+import com.example.iadiointerviewtest.dto.CleanedPerson
 import jakarta.persistence.*
 
 @Entity

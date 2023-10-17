@@ -1,6 +1,6 @@
 package com.example.iadiointerviewtest.controller
 
-import com.example.iadiointerviewtest.entity.CleanedPerson
+import com.example.iadiointerviewtest.dto.CleanedPerson
 import com.example.iadiointerviewtest.entity.Person
 import com.example.iadiointerviewtest.entity.clean
 import com.example.iadiointerviewtest.service.PersonService
