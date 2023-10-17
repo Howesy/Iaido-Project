@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     id("org.springframework.boot") version "3.1.4"
@@ -33,6 +34,8 @@ dependencies {
     implementation("org.springframework.security:spring-security-core:6.1.4")
     implementation("org.springframework.security:spring-security-config:6.0.2")
     implementation("org.springframework.security:spring-security-web:6.1.0")
+    implementation("org.springframework.boot:spring-boot-jarmode-layertools:3.0.4")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:3.0.7")
 }
 
 allOpen {
