@@ -24,3 +24,4 @@ The endpoints for the application are as follows:<br>
 </ul>
 
 <img src="https://i.imgur.com/pX3Qh2C.png">
+<img src="https://i.imgur.com/j24KCRH.png">
