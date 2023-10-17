@@ -16,9 +16,9 @@ The endpoints for the application are as follows:<br>
 
 <ul>
   <li>/persons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: GET &nbsp;&nbsp;: ?page=0&amount=1</li>
-  <li>/searchPersons : GET &nbsp;&nbsp;: ?name=Charlie&age=22</li>
+  <li>/searchPersons &nbsp;: GET &nbsp;&nbsp;: ?name=Charlie&age=22</li>
   <li>/persons/{id}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: GET &nbsp;&nbsp;: /persons/1</li>
-  <li>/persons &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: POST : JSON DATA</li>
+  <li>/persons &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: POST : JSON DATA</li>
   <li>/persons/{id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: PUT &nbsp;&nbsp;: JSON DATA</li>
   <li>/persons/{id} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: DELETE : /persons/1</li>
 </ul>
