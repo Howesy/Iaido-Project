@@ -34,7 +34,7 @@ class PersonController(private val personService: PersonService) {
     /**
      * API Endpoint: /searchPersons, HTTP Method: GET,
      * Retrieve all persons filtered by name (partial) and/or age without the username and password.
-     * This API Endpoint is available to the GUEST role.
+     * This API Endpoint is available to the GUEST and ADMIN role.
      * Example: searchPersons?name=Charlie&age=22
      * @param name Name of the person you are searching for.
      * @param age Age of the person you are searching for.
