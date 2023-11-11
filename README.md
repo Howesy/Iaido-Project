@@ -1,8 +1,4 @@
-# Iaido Code Test
-This is my submission for the Iaido code test, this was a wonderfully learning experience and I believe I have created
-a well refined product.
-
-# Docker Deployment
+Docker Deployment
 
 Optimized Spring Boot docker by splitting Spring Boot's fat jar into layers to build one singular layer and reuse the 
 duplicate layers from the host cache.
